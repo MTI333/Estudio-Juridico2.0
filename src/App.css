@@ -1,0 +1,21 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App h1 {
+  color: #265015;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.App p {
+  color: #2C3E50;
+  font-size: 1.2rem;
+}

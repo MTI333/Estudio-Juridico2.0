@@ -1,0 +1,287 @@
+/* src/index.css */
+/* VARIABLES CSS - Paleta elegante para estudio jurídico */
+:root {
+  --color-dorado: #D4AF37;         /* Dorado elegante */
+  --color-dorado-oscuro: #B8860B;  /* Dorado oscuro para hover */
+  --color-oliva: #265015;          /* Verde oliva sofisticado */
+  --color-oliva-claro: #6B8E23;    /* Oliva claro para detalles */
+  --color-blanco: #FFFFFF;         /* Blanco puro */
+  --color-gris-claro: #F5F5F5;     /* Fondo claro */
+  --color-texto: #2C3E50;          /* Texto oscuro elegante */
+  
+  --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --sombra-media: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --transicion: all 0.3s ease;
+
+  /* Tipografía */
+  --font-primary: 'Georgia', 'Times New Roman', serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  
+  /* Bordes */
+  --border-radius-sm: 4px;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+}
+
+/* RESET Y ESTILOS BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: linear-gradient(rgba(255, 255, 255, 0.541), rgba(248, 248, 248, 0.95));
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ANIMACIONES */
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+      transform: translateY(-20px) rotate(180deg); 
+  }
+}
+
+/* BOTONES ELEGANTES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transicion);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-primary);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-oscuro) 100%);
+  color: var(--color-oliva);
+  box-shadow: var(--sombra-suave);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-dorado);
+  border: 2px solid var(--color-dorado);
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: var(--color-dorado);
+  color: var(--color-oliva);
+  transform: translateY(-2px);
+}
+
+/* CARDS ELEGANTES */
+.card {
+  background: var(--color-blanco);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--sombra-suave);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: var(--transicion);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+/* FORMULARIOS ELEGANTES */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+  color: var(--color-texto);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  transition: var(--transicion);
+  background: var(--color-blanco);
+  font-family: var(--font-primary);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-dorado);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  transform: translateY(-1px);
+}
+
+/* UTILIDADES */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  color: var(--color-oliva);
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-dorado), var(--color-dorado-oscuro));
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-texto);
+  max-width: 700px;
+  margin: var(--space-lg) auto 0;
+  line-height: 1.6;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--color-dorado);
+}
+
+.bg-light {
+  background-color: var(--color-gris-claro);
+}
+
+.bg-oliva {
+  background: linear-gradient(135deg, var(--color-oliva) 0%, var(--color-oliva-claro) 100%);
+  color: var(--color-blanco);
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  :root {
+      --font-size-4xl: 1.875rem;
+      --font-size-3xl: 1.625rem;
+      --font-size-2xl: 1.375rem;
+  }
+  
+  .container {
+      padding: 0 var(--space-sm);
+  }
+  
+  .section {
+      padding: var(--space-xl) 0;
+  }
+}
