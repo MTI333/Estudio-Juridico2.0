@@ -4,6 +4,7 @@ import Hero from '../sections/Home/Hero';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
 import './Home.css';
+import instalacionesImage from '../../assets/images/estudio-fisico-sandri.jpg';
 
 const Home = () => {
   // Función para redirigir a WhatsApp
@@ -128,9 +129,13 @@ const Home = () => {
           <div className="instalaciones-content">
             <div className="instalaciones-image">
               <img  
-                src="./public/estudio-fisico-sandri.jpg" 
+                src={instalacionesImage} 
                 alt="Instalaciones del Estudio Jurídico" 
                 className="office-image"
+                onError={(e) => {
+                  console.error('Error cargando imagen de instalaciones');
+                  e.target.style.display = 'none';
+                }}
               />
             </div>
             <div className="instalaciones-info">

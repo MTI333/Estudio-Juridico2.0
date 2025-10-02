@@ -59,14 +59,7 @@ const InformacionProfesional = () => {
             <p>
               Profesional matriculada en el Colegio de Abogados de Córdoba y registrada en CSJN.
             </p>
-            <div className="cta-buttons">
-              <button className="btn btn-primary">
-                Consulta Profesional
-              </button>
-              <button className="btn btn-secondary">
-                Contactar
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>

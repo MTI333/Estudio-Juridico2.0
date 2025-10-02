@@ -11,7 +11,7 @@ const Footer = () => {
       marginTop: 'auto'
     }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <p>&copy; 2024 Estudio Jurídico Policastro. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Estudio Jurídico Policastro. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
