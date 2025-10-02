@@ -6,6 +6,31 @@ import InformacionProfesional from '../sections/InformacionProfesional/Professio
 import './Home.css';
 
 const Home = () => {
+  // Función para redirigir a WhatsApp
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5493544437481"; // Número sin espacios ni símbolos
+    const message = "Hola, me gustaría solicitar una consulta legal.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Función para redirigir a llamada telefónica
+  const handleCallClick = () => {
+    const phoneNumber = "+5493544437481";
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  // Función para redirigir a email
+  const handleEmailClick = () => {
+    const email = "SandraMarcelaPolicastro@gmail.com";
+    const subject = "Consulta Legal";
+    const body = "Hola, me gustaría solicitar una consulta legal.";
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <div className="home">
       {/* Hero Section - Estructura original pero centrada */}
@@ -20,7 +45,15 @@ const Home = () => {
               y representación de calidad para proteger sus derechos e intereses.
             </p>
             <div className="hero-buttons">
-              <button className="btn btn-secondary">
+              <button 
+                className="btn btn-secondary"
+                onClick={() => {
+                  const serviciosSection = document.getElementById('servicios');
+                  if (serviciosSection) {
+                    serviciosSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Conocer Nuestros Servicios
               </button>
             </div>
@@ -153,6 +186,7 @@ const Home = () => {
                 className="google-maps-iframe"
               ></iframe>
             </div>
+            
             <div className="info-ubicacion">
               <h3>Información de Contacto</h3>
               <div className="contacto-info-grid">
@@ -183,15 +217,25 @@ const Home = () => {
                   <div className="contacto-details">
                     <h4>Email</h4>
                     <p>SandraMarcelaPolicastro@gmail.com</p>
-                  
                   </div>
                 </div>
               </div>
               <div className="ubicacion-actions">
-                <button className="btn btn-primary">
+                <button 
+                  className="btn btn-primary whatsapp-btn"
+                  onClick={handleWhatsAppClick}
+                >
+                  <span className="whatsapp-icon">💬</span>
                   WhatsApp
                 </button>
                 
+                <button 
+                  className="btn btn-secondary email-btn"
+                  onClick={handleEmailClick}
+                >
+                  <span className="email-icon">✉️</span>
+                  Enviar Email
+                </button>
               </div>
             </div>
           </div>
@@ -207,9 +251,6 @@ const Home = () => {
       <section id="informacion-profesional">
         <InformacionProfesional />
       </section>
-
-      {/* CTA Section */}
-      
     </div>
   );
 };

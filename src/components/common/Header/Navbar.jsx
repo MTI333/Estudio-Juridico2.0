@@ -51,7 +51,7 @@ const Navbar = () => {
     { label: 'Servicios', path: '/', section: 'servicios' },
     { label: 'Instalaciones', path: '/', section: 'instalaciones' },
     { label: 'Información Prof.', path:'/', section: 'informacion-profesional' }, // Corregido
-    { label: 'Contacto', path: '/contacto' }
+    { label: 'Contacto', path:'/', section: 'ubicacion' }
   ];
 
   return (

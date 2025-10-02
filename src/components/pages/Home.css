@@ -656,4 +656,77 @@
   .ubicacion-actions {
     flex-direction: column;
   }
+  /* Agregar al final de Home.css */
+
+/* Botones de Contacto Mejorados */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E) !important;
+  color: white !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3) !important;
+}
+
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #128C7E, #0a6b5e) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4) !important;
+}
+
+.email-btn {
+  background: transparent;
+  color: var(--color-dorado);
+  border: 2px solid var(--color-dorado);
+}
+
+.email-btn:hover {
+  background: var(--color-dorado);
+  color: var(--color-oliva);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Iconos en botones */
+.whatsapp-icon,
+.phone-icon,
+.email-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Mejoras para los botones de ubicación */
+.ubicacion-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ubicacion-actions .btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive para botones de contacto */
+@media (max-width: 768px) {
+  .ubicacion-actions .btn {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ubicacion-actions {
+    gap: 0.8rem;
+  }
+  
+  .ubicacion-actions .btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
 }
