@@ -128,7 +128,7 @@ const Home = () => {
           <div className="instalaciones-content">
             <div className="instalaciones-image">
               <img  
-                src="/src/assets/images/estudio-fisico-sandri.jpg" 
+                src="./public/estudio-fisico-sandri.jpg" 
                 alt="Instalaciones del Estudio Jurídico" 
                 className="office-image"
               />
@@ -221,21 +221,16 @@ const Home = () => {
                 </div>
               </div>
               <div className="ubicacion-actions">
-                <button 
-                  className="btn btn-primary whatsapp-btn"
-                  onClick={handleWhatsAppClick}
-                >
+                <button className="btn btn-primary whatsapp-btn" onClick={handleWhatsAppClick}>
                   <span className="whatsapp-icon">💬</span>
                   WhatsApp
                 </button>
                 
-                <button 
-                  className="btn btn-secondary email-btn"
-                  onClick={handleEmailClick}
-                >
+                <button className="btn btn-secondary email-btn" onClick={handleEmailClick}>
                   <span className="email-icon">✉️</span>
                   Enviar Email
                 </button>
+                
               </div>
             </div>
           </div>
