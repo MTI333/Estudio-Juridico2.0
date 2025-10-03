@@ -9,8 +9,8 @@
 .hero-section {
   background: linear-gradient(135deg, 
     rgba(38, 80, 21, 0.95) 0%, 
-    rgba(107, 142, 35, 0.85) 100%),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.03"><polygon fill="white" points="0,1000 1000,0 1000,1000"/></svg>');
+    rgba(107, 142, 35, 0.83) 50%),
+    url('/../../assets/background-pag-sandri.jpg') no-repeat center/cover;
   color: var(--color-blanco);
   padding: 8rem 0 6rem;
   position: relative;

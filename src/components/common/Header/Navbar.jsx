@@ -1,4 +1,4 @@
-/// src/components/common/Header/Navbar.jsx
+// src/components/common/Header/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 // Si la imagen está en src/assets/images/logo-sandri.jpg
@@ -24,6 +24,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Función para redirigir a WhatsApp
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5493544437481";
+    const message = "Hola, me gustaría solicitar una consulta legal.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    setIsMobileMenuOpen(false);
+  };
+
   // Función para scroll suave a secciones
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
@@ -48,10 +58,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'Inicio', path: '/', section: 'hero' },
+    { label: 'Información Profesional', path: '/', section: 'informacion-profesional' },
     { label: 'Servicios', path: '/', section: 'servicios' },
     { label: 'Instalaciones', path: '/', section: 'instalaciones' },
-    { label: 'Información Prof.', path:'/', section: 'informacion-profesional' }, // Corregido
-    { label: 'Contacto', path:'/', section: 'ubicacion' }
+    { label: 'Contacto', path: '/', section: 'ubicacion' }
   ];
 
   return (
@@ -75,7 +85,6 @@ const Navbar = () => {
                 console.log('Logo cargado exitosamente');
               }}
             />
-            
           </div>
         </Link>
 
@@ -98,14 +107,17 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          
-          <Link 
-            to="/realizar-consulta" 
-            className="nav-cta"
-          >
-            Realizar Consulta
-          </Link>
         </div>
+
+        {/* Botón WhatsApp Desktop */}
+        <button 
+          className="whatsapp-btn desktop-whatsapp"
+          onClick={handleWhatsAppClick}
+          title="Contactar por WhatsApp"
+        >
+          <span className="whatsapp-icon">💬</span>
+          <span className="whatsapp-text">WhatsApp</span>
+        </button>
 
         {/* Menú Mobile */}
         <div 
@@ -140,13 +152,15 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <Link 
-            to="/realizar-consulta" 
-            className="mobile-nav-cta"
-            onClick={() => setIsMobileMenuOpen(false)}
+          
+          {/* Botón WhatsApp Mobile */}
+          <button 
+            className="mobile-whatsapp-btn"
+            onClick={handleWhatsAppClick}
           >
-            Realizar Consulta
-          </Link>
+            <span className="whatsapp-icon">💬</span>
+            Contactar por WhatsApp
+          </button>
         </div>
       </div>
     </nav>

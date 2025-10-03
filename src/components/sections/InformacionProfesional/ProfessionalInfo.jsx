@@ -39,29 +39,10 @@ const InformacionProfesional = () => {
           </div>
         </div>
 
-        {/* Áreas de Especialización */}
-        <div className="especializacion-section">
-          <h3>Áreas de Especialización</h3>
-          <div className="especializacion-grid">
-            {areasEspecializacion.map((area, index) => (
-              <div key={index} className="especializacion-item">
-                <div className="especializacion-icon">⚖️</div>
-                <span className="especializacion-texto">{area}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+       
 
         {/* CTA Compacto */}
-        <div className="professional-cta compact">
-          <div className="cta-content">
-            <h3>¿Necesita Asesoramiento Legal Profesional?</h3>
-            <p>
-              Profesional matriculada en el Colegio de Abogados de Córdoba y registrada en CSJN.
-            </p>
-            
-          </div>
-        </div>
+        
       </div>
     </section>
   );

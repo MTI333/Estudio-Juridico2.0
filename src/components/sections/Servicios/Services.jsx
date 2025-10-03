@@ -6,86 +6,70 @@ const Servicios = () => {
   const servicios = [
     {
       id: 1,
-      titulo: "Asesoramiento Legal",
-      descripcion: "Orientación legal personalizada para tomar decisiones informadas y proteger tus derechos en cualquier situación jurídica.",
+      titulo: "ASESORAMIENTO LEGAL",
+      descripcion: "Orientación legal personalizada para tomar decisiones informadas y proteger sus derechos .",
       icono: "⚖️",
       caracteristicas: [
         "Análisis de casos",
-        "Evaluación de riesgos",
         "Estrategias legales",
         "Orientación preventiva"
       ]
     },
     {
       id: 2,
-      titulo: "Representación Judicial",
-      descripcion: "Defensa profesional en tribunales y representación legal integral en todos los procesos judiciales.",
-      icono: "👨‍⚖️",
+      titulo: "DERECHO DE FAMILIA Y SUCESIONES",
+      descripcion: "Asesoramiento y representación en asuntos de familia, incluyendo divorcios, adopciones y sucesiones.",
+      icono: "👪",
       caracteristicas: [
-        "Presentación de demandas",
-        "Audiencias y vistas",
-        "Recursos judiciales",
-        "Seguimiento de casos"
+        "Divorcios",
+        "Adopciones",
+        "Sucesiones",
+        "Cuotas alimentarias",
+        
       ]
     },
+  
     {
       id: 3,
-      titulo: "Consultoría en Derecho Civil y Comercial",
-      descripcion: "Asesoría especializada en contratos, sociedades, propiedad intelectual y transacciones comerciales.",
-      icono: "📊",
+      titulo: "DERECHO LABORAL",
+      descripcion: "Representación legal en conflictos laborales para empleadores y trabajadores.",
+      icono: "👥",
       caracteristicas: [
-        "Redacción de contratos",
-        "Constitución de empresas",
-        "Propiedad intelectual",
-        "Negociaciones comerciales"
+        "Despidos",
+        "Defensas laborales",
+        "Reclamos entre A.R.T y S.R.T",
       ]
     },
     {
       id: 4,
-      titulo: "Defensa en Juicios Laborales",
-      descripcion: "Representación legal en conflictos laborales para empleadores y trabajadores.",
-      icono: "👥",
+      titulo: "DERECHO CIVIL Y COMERCIAL",
+      descripcion: "",
+      icono: "📊",
       caracteristicas: [
-        "Despidos e indemnizaciones",
-        "Conflictos contractuales",
-        "Acuerdos laborales",
-        "Audiencias de conciliación"
+        "Redacción de contratos",
+        "Cobranzas",
+        "Desalojos",
+        "Sociedades",
+        "Derechos Reales(asesoramos desde la adquisicion de los derechos posesorios sobre inmuebles hasta su inscripcion en el registro de la propiedad, previo tramite de usucapion)",
+        "Juicios de prescripcion adquisitiva",
+        "defensa de los derechos posesorios",
+        "Juicios de reinvidicacion de inmuebles",
       ]
     },
-    {
-      id: 5,
-      titulo: "Trámites Notariales",
-      descripcion: "Gestión integral de documentación notarial y legalización de documentos.",
-      icono: "📑",
-      caracteristicas: [
-        "Poderes notariales",
-        "Autenticaciones",
-        "Escrituras públicas",
-        "Legalizaciones"
-      ]
-    },
-    {
-      id: 6,
-      titulo: "Mediación y Resolución de Conflictos",
-      descripcion: "Soluciones alternativas de controversias mediante procesos de mediación eficientes.",
-      icono: "🤝",
-      caracteristicas: [
-        "Mediación prejudicial",
-        "Acuerdos extrajudiciales",
-        "Resolución de disputas",
-        "Procesos colaborativos"
-      ]
-    }
+    
+   
+    
+    
   ];
 
   return (
     <section className="servicios" id="servicios">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Servicios Profesionales</h2>
+          
+          <h3 className="section-title"> Areas De Especializacion </h3>
           <p className="section-subtitle">
-            Ofrecemos una gama completa de servicios legales con la más alta calidad profesional 
-            y compromiso con nuestros clientes.
+            Ofrecemos una amplia gama de servicios legales adaptados a sus necesidades.
           </p>
         </div>
         

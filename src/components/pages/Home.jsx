@@ -42,8 +42,9 @@ const Home = () => {
               Excelencia Legal con Compromiso y Resultados
             </h1>
             <p className="hero-subtitle">
-              Más de 20 años de experiencia brindando soluciones legales integrales 
-              y representación de calidad para proteger sus derechos e intereses.
+                El estudio ofrece atención personalizada en todos los procesos iniciados 
+              dando respuesta a cada cliente cada vez que solicita información 
+                                                      sobre su trámite. 
             </p>
             <div className="hero-buttons">
               <button 
@@ -62,6 +63,16 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Información Profesional Section */}
+      <section id="informacion-profesional">
+        <InformacionProfesional />
+      </section>
+
+      {/* Servicios Section */}
+      <section id="servicios">
+        <Servicios />
+      </section>
+
       {/* Features Section */}
       <section className="features-section">
         <div className="container">
@@ -69,7 +80,7 @@ const Home = () => {
             <h2 className="section-title">¿Por Qué Elegirnos?</h2>
             <p className="section-subtitle">
               Combinamos experiencia, dedicación y un enfoque personalizado 
-              para cada caso que manejamos.
+              para cada caso.
             </p>
           </div>
           <div className="features-grid">
@@ -111,7 +122,7 @@ const Home = () => {
             </div>
             <div className="stat-item">
               <div className="stat-number">+200</div>
-              <div className="stat-label">Clientes Satisfechos</div>
+              <div className="stat-label">Casos solucionados de forma satisfactoria</div>
             </div>
           </div>
         </div>
@@ -174,7 +185,7 @@ const Home = () => {
           <div className="section-header">
             <h2 className="section-title">Nuestra Ubicación</h2>
             <p className="section-subtitle">
-              Encuéntrenos fácilmente. Estamos ubicados en una ubicación céntrica y accesible
+              Estamos ubicados en zona céntrica y accesible.
             </p>
           </div>
           <div className="ubicacion-content">
@@ -207,7 +218,7 @@ const Home = () => {
                   <div className="contacto-icon">🕒</div>
                   <div className="contacto-details">
                     <h4>Horario de Atención</h4>
-                    <p>Lunes a Viernes: 8:00 - 14:00 hs</p>
+                    <p>Lunes a Viernes: (8:00 - 13:00 hs) (17:00 - 20:00 hs)</p>
                   </div>
                 </div>
                 <div className="contacto-item">
@@ -221,7 +232,7 @@ const Home = () => {
                   <div className="contacto-icon">✉️</div>
                   <div className="contacto-details">
                     <h4>Email</h4>
-                    <p>SandraMarcelaPolicastro@gmail.com</p>
+                    <p>sandramarcelapolicastro@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -240,16 +251,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Main Services Preview */}
-      <section id="servicios">
-        <Servicios />
-      </section>
-
-      {/* Professional Info Preview */}
-      <section id="informacion-profesional">
-        <InformacionProfesional />
       </section>
     </div>
   );
