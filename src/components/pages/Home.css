@@ -12,7 +12,7 @@
     url('../../assets/images/background-pag-sandri.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: auto; /* Ajusta la imagen al tamaño del contenedor */
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-attachment: scroll; /* Evita que el fondo quede fijo respecto al viewport */
   color: var(--color-blanco);
   padding: 7rem 0 5rem;
