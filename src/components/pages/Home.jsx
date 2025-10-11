@@ -92,14 +92,7 @@ const Home = () => {
                 con casos exitosos en diversas áreas legales.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">👥</div>
-              <h3 className="feature-title">Atención Personalizada</h3>
-              <p className="feature-description">
-                Cada cliente recibe atención individualizada y estrategias 
-                legales diseñadas específicamente para su situación.
-              </p>
-            </div>
+        
             <div className="feature-card">
               <div className="feature-icon">🎯</div>
               <h3 className="feature-title">Resultados Efectivos</h3>
@@ -113,21 +106,6 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">20+</div>
-              <div className="stat-label">Años de Experiencia</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">+200</div>
-              <div className="stat-label">Casos solucionados de forma satisfactoria</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Sección de Instalaciones */}
       <section className="instalaciones-section" id="instalaciones">
         <div className="container">
@@ -156,24 +134,7 @@ const Home = () => {
                 y profesionalismo, donde podrá discutir su situación legal con total privacidad 
                 y comodidad.
               </p>
-              <div className="instalaciones-features">
-                <div className="feature-item">
-                  <span className="feature-icon">🔒</span>
-                  <span>Total confidencialidad</span>
-                </div>
-                <div className="feature-item">
-                  <span className="feature-icon">💼</span>
-                  <span>Ambiente profesional</span>
-                </div>
-                <div className="feature-item">
-                  <span className="feature-icon">🕒</span>
-                  <span>Puntualidad en las citas</span>
-                </div>
-                <div className="feature-item">
-                  <span className="feature-icon">📍</span>
-                  <span>Ubicación accesible</span>
-                </div>
-              </div>
+          
             </div>
           </div>
         </div>
@@ -185,7 +146,7 @@ const Home = () => {
           <div className="section-header">
             <h2 className="section-title">Nuestra Ubicación</h2>
             <p className="section-subtitle">
-              Estamos ubicados en zona céntrica y accesible.
+              Estamos ubicados en la ciudad de Villa Dolores Cordoba.
             </p>
           </div>
           <div className="ubicacion-content">
@@ -193,7 +154,7 @@ const Home = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.518328765066!2d-65.19325928836889!3d-31.94683217391323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942cd52c4f67983b%3A0x17a2fe2c1ea3af0!2sESTUDIO%20JURIDICO%20POLICASTRO%20%26%20ASOC.!5e0!3m2!1ses!2sar!4v1759329503499!5m2!1ses!2sar" 
                 width="100%"
-                height="450"
+                height="700"
                 style={{ border: 0, borderRadius: '12px' }}
                 allowFullScreen=""
                 loading="lazy"
@@ -232,7 +193,7 @@ const Home = () => {
                   <div className="contacto-icon">✉️</div>
                   <div className="contacto-details">
                     <h4>Email</h4>
-                    <p>sandramarcelapolicastro@gmail.com</p>
+                    <p>sandrapolicastro@gmail.com</p>
                   </div>
                 </div>
               </div>

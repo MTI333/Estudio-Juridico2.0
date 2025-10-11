@@ -1,8 +1,9 @@
 /* src/components/sections/Servicios.css */
 .servicios {
-  padding: var(--space-2xl) 0;
-  background: var(--color-blanco);
+  padding: var(--space-xl) 0;
+  background: rgba(255, 255, 255, 0.85);
   position: relative;
+  backdrop-filter: blur(3px);
 }
 
 .servicios::before {
@@ -17,23 +18,31 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.section-header.compact {
+  margin-bottom: var(--space-lg);
+}
+
+.section-header.compact .section-title {
+  margin-bottom: var(--space-sm);
+}
+
 .section-title {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--color-oliva);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .section-subtitle {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   color: var(--color-texto);
   opacity: 0.8;
   line-height: 1.6;
@@ -43,14 +52,17 @@
 
 .servicios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-xl);
-  margin: var(--space-2xl) 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .servicio-card {
-  background: var(--color-blanco);
-  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--space-lg);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--sombra-suave);
   border: 1px solid rgba(212, 175, 55, 0.15);
@@ -60,7 +72,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 400px;
+  min-height: 320px;
+  backdrop-filter: blur(5px);
 }
 
 .servicio-card::before {
@@ -69,7 +82,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, var(--color-dorado), var(--color-dorado-oscuro));
   transform: scaleX(0);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -95,34 +108,34 @@
 }
 
 .servicio-card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-4px) scale(1.01);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 8px 25px rgba(212, 175, 55, 0.15);
+    0 15px 30px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(212, 175, 55, 0.15);
   border-color: rgba(212, 175, 55, 0.3);
 }
 
 .servicio-header {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
   position: relative;
   z-index: 2;
 }
 
 .servicio-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, var(--color-dorado), var(--color-dorado-oscuro));
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
   box-shadow: 
-    0 8px 20px rgba(212, 175, 55, 0.3),
+    0 6px 15px rgba(212, 175, 55, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
   position: relative;
@@ -145,16 +158,16 @@
 }
 
 .servicio-card:hover .servicio-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.05) rotate(3deg);
   box-shadow: 
-    0 12px 25px rgba(212, 175, 55, 0.4),
+    0 8px 20px rgba(212, 175, 55, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .servicio-titulo {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   color: var(--color-oliva);
   line-height: 1.3;
   flex: 1;
@@ -164,9 +177,9 @@
 
 .servicio-descripcion {
   color: var(--color-texto);
-  margin-bottom: var(--space-lg);
-  line-height: 1.7;
-  font-size: var(--font-size-base);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+  font-size: var(--font-size-sm);
   flex-grow: 1;
   opacity: 0.9;
   position: relative;
@@ -176,7 +189,7 @@
 
 .servicio-caracteristicas {
   list-style: none;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   padding: 0;
   position: relative;
   z-index: 2;
@@ -186,12 +199,12 @@
 .caracteristica-item {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
   color: var(--color-texto);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   opacity: 0.9;
-  line-height: 1.5;
+  line-height: 1.4;
   padding: var(--space-xs) 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.1);
   transition: all 0.2s ease;
@@ -204,13 +217,13 @@
 
 .caracteristica-item:hover {
   opacity: 1;
-  transform: translateX(4px);
+  transform: translateX(3px);
   border-bottom-color: rgba(212, 175, 55, 0.3);
 }
 
 .caracteristica-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   background: var(--color-dorado);
   color: var(--color-oliva);
   border-radius: 50%;
@@ -221,85 +234,129 @@
   font-weight: bold;
   flex-shrink: 0;
   margin-top: 1px;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
   transition: all 0.2s ease;
 }
 
 .caracteristica-item:hover .caracteristica-icon {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 3px 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Botón de servicio más compacto */
+.servicio-cta {
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.servicio-btn {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-dorado), var(--color-dorado-oscuro));
+  color: var(--color-oliva);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.servicio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .servicios-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    max-width: 900px;
   }
 }
 
 @media (max-width: 768px) {
   .servicios {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
+  }
+  
+  .section-header.compact {
+    margin-bottom: var(--space-md);
   }
   
   .servicios-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    margin: var(--space-xl) 0;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+    max-width: 100%;
   }
   
   .servicio-header {
     flex-direction: column;
     text-align: center;
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
   
   .servicio-icon {
     align-self: center;
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
   }
   
   .servicio-titulo {
     text-align: center;
+    font-size: var(--font-size-base);
   }
   
   .section-header {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
   
   .section-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
   }
   
   .section-subtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
+  }
+  
+  .servicio-card {
+    min-height: 300px;
+    padding: var(--space-md);
   }
 }
 
 @media (max-width: 480px) {
   .servicio-card {
-    padding: var(--space-lg);
-    min-height: 380px;
+    padding: var(--space-sm);
+    min-height: 280px;
   }
   
   .servicios-grid {
-    gap: var(--space-md);
+    gap: var(--space-sm);
   }
   
   .servicio-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.6rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
   }
   
   .servicio-titulo {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
   }
   
   .caracteristica-item {
+    font-size: var(--font-size-xs);
+  }
+  
+  .servicio-btn {
+    padding: var(--space-xs) var(--space-sm);
     font-size: var(--font-size-xs);
   }
 }

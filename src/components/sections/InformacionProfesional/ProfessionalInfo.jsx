@@ -15,23 +15,23 @@ const InformacionProfesional = () => {
   return (
     <section className="informacion-profesional" id="informacion-profesional">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header compact">
           <h2 className="section-title">Información Profesional</h2>
         </div>
         
         {/* Información Principal Compacta */}
         <div className="info-principal">
           <div className="titulo-principal">
-            <h1>Sandra Marcela Policastro</h1>
+            <h1>Ab. Sandra Marcela Policastro</h1>
             <div className="institucion">
               <h2>Procuradora-Abogada</h2>
-              Facultad de Ciencias Sociales - Universidad Nacional de Córdoba
+              Facultad de Derecho y Ciencias Sociales - Universidad Nacional de Córdoba
             </div>
           </div>
           
           <div className="credenciales-principales">
             <div className="credencial-item principal">
-              <strong>MP:</strong> 1-30173 (Colegio de Abogados de Cba)
+              <strong>MP:</strong> 1-30173 (Colegio de Abogados de Córdoba)
             </div>
             <div className="credencial-item principal">
               <strong>CSJN:</strong> Tomo 66 - Folio 634
@@ -48,4 +48,4 @@ const InformacionProfesional = () => {
   );
 };
 
-export default InformacionProfesional;
+export default InformacionProfesional;  

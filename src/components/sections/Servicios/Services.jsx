@@ -6,8 +6,8 @@ const Servicios = () => {
   const servicios = [
     {
       id: 1,
-      titulo: "ASESORAMIENTO LEGAL",
-      descripcion: "Orientación legal personalizada para tomar decisiones informadas y proteger sus derechos .",
+      titulo: "ASESORAMIENTO JURIDICO INTEGRAL",
+      descripcion: "",
       icono: "⚖️",
       caracteristicas: [
         "Análisis de casos",
@@ -18,13 +18,13 @@ const Servicios = () => {
     {
       id: 2,
       titulo: "DERECHO DE FAMILIA Y SUCESIONES",
-      descripcion: "Asesoramiento y representación en asuntos de familia, incluyendo divorcios, adopciones y sucesiones.",
+      descripcion: "",
       icono: "👪",
       caracteristicas: [
         "Divorcios",
         "Adopciones",
         "Sucesiones",
-        "Cuotas alimentarias",
+        "Cuota alimentaria",
         
       ]
     },
@@ -32,11 +32,11 @@ const Servicios = () => {
     {
       id: 3,
       titulo: "DERECHO LABORAL",
-      descripcion: "Representación legal en conflictos laborales para empleadores y trabajadores.",
+      descripcion: "",
       icono: "👥",
       caracteristicas: [
         "Despidos",
-        "Defensas laborales",
+        "Reclamos laborales",
         "Reclamos entre A.R.T y S.R.T",
       ]
     },
@@ -46,12 +46,11 @@ const Servicios = () => {
       descripcion: "",
       icono: "📊",
       caracteristicas: [
-        "Redacción de contratos",
+        "Contratos",
         "Cobranzas",
         "Desalojos",
         "Sociedades",
-        "Derechos Reales(asesoramos desde la adquisicion de los derechos posesorios sobre inmuebles hasta su inscripcion en el registro de la propiedad, previo tramite de usucapion)",
-        "Juicios de prescripcion adquisitiva",
+        "Juicios de prescripcion adquisitiva (usucapiones)",
         "defensa de los derechos posesorios",
         "Juicios de reinvidicacion de inmuebles",
       ]
@@ -65,11 +64,11 @@ const Servicios = () => {
   return (
     <section className="servicios" id="servicios">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header compact">
           
           <h3 className="section-title"> Areas De Especializacion </h3>
           <p className="section-subtitle">
-            Ofrecemos una amplia gama de servicios legales adaptados a sus necesidades.
+            Ofrecemos una amplia gama de servicios legales en toda la provincia de Córdoba adaptados a sus necesidades.
           </p>
         </div>
         

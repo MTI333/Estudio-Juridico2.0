@@ -1,6 +1,6 @@
 /* src/components/sections/InformacionProfesional.css */
 .informacion-profesional {
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
   background: var(--color-blanco);
   position: relative;
 }
@@ -15,18 +15,27 @@
   background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
 }
 
+/* Header Compacto */
+.section-header.compact {
+  margin-bottom: var(--space-lg);
+}
+
+.section-header.compact .section-title {
+  margin-bottom: var(--space-md);
+}
+
 /* Información Principal Compacta */
 .info-principal {
   text-align: center;
-  margin-bottom: var(--space-2xl);
-  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
   background: linear-gradient(135deg, var(--color-gris-claro) 0%, #f8f8f8 100%);
   border-radius: var(--border-radius-lg);
   border: 2px solid rgba(212, 175, 55, 0.2);
 }
 
 .titulo-principal h1 {
-  font-size: var(--font-size-3xl);
+  font-size: var(4rem);
   color: var(--color-oliva);
   margin-bottom: var(--space-sm);
   font-weight: 700;
@@ -36,23 +45,23 @@
   font-size: var(--font-size-xl);
   color: var(--color-dorado);
   font-weight: 600;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   font-style: italic;
 }
 
 .credenciales-principales {
   display: flex;
   justify-content: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   flex-wrap: wrap;
 }
 
 .credencial-item.principal {
   background: var(--color-blanco);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-md);
   border-radius: var(--border-radius);
   border: 2px solid var(--color-dorado);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: 500;
   box-shadow: var(--sombra-suave);
   transition: var(--transicion);
@@ -69,17 +78,17 @@
 
 /* Especialización Section */
 .especializacion-section {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   background: var(--color-blanco);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--sombra-suave);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .especializacion-section h3 {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-md);
   color: var(--color-oliva);
   text-align: center;
   position: relative;
@@ -101,7 +110,7 @@
 .especializacion-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-sm);
   max-width: 900px;
   margin: 0 auto;
 }
@@ -109,8 +118,8 @@
 .especializacion-item {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-md);
+  gap: var(--space-sm);
+  padding: var(--space-sm);
   background: var(--color-gris-claro);
   border-radius: var(--border-radius);
   transition: var(--transicion);
@@ -123,7 +132,7 @@
 }
 
 .especializacion-icon {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
 }
 
@@ -136,7 +145,7 @@
 /* CTA Compacto */
 .professional-cta.compact {
   background: linear-gradient(135deg, var(--color-oliva) 0%, var(--color-oliva-claro) 100%);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   border-radius: var(--border-radius-lg);
   text-align: center;
   color: var(--color-blanco);
@@ -144,13 +153,13 @@
 
 .professional-cta.compact h3 {
   color: var(--color-blanco);
-  margin-bottom: var(--space-md);
-  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lg);
 }
 
 .professional-cta.compact p {
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -159,12 +168,16 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .informacion-profesional {
-    padding: var(--space-lg) 0;
+    padding: var(--space-md) 0;
+  }
+  
+  .section-header.compact {
+    margin-bottom: var(--space-md);
   }
   
   .info-principal {
-    padding: var(--space-lg);
-    margin-bottom: var(--space-xl);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
   
   .titulo-principal h1 {
@@ -177,7 +190,7 @@
   
   .credenciales-principales {
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     align-items: center;
   }
   
@@ -185,18 +198,21 @@
     width: 100%;
     max-width: 300px;
     text-align: center;
+    padding: var(--space-sm);
   }
   
   .especializacion-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
   }
   
   .especializacion-section {
-    padding: var(--space-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
   
   .professional-cta.compact {
-    padding: var(--space-lg);
+    padding: var(--space-md);
   }
 }
 
@@ -210,17 +226,17 @@
   }
   
   .credencial-item.principal {
-    font-size: var(--font-size-base);
-    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    padding: var(--space-xs) var(--space-sm);
   }
   
   .especializacion-item {
-    padding: var(--space-sm);
-    gap: var(--space-sm);
+    padding: var(--space-xs);
+    gap: var(--space-xs);
   }
   
   .especializacion-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .especializacion-texto {

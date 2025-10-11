@@ -40,7 +40,7 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
   font-weight: 700;
   margin-bottom: var(--space-md);
   line-height: 1.2;
@@ -62,7 +62,7 @@
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg); /* CAMBIO: reducido de xl a lg */
   margin-bottom: var(--space-xl);
   opacity: 0.9;
   font-weight: 300;
@@ -269,7 +269,7 @@
   }
   
   .hero-subtitle {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md); /* CAMBIO: reducido también en móvil */
   }
   
   .hero-buttons {
