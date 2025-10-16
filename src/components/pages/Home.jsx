@@ -39,7 +39,7 @@ const Home = () => {
               Excelencia Legal con Compromiso y Resultados
             </h1>
             <p className="hero-subtitle">
-                El estudio ofrece atención personalizada en todos los procesos iniciados 
+                Ofrecemos atención personalizada en todos los procesos iniciados 
               dando respuesta a cada cliente cada vez que solicita información 
                                             sobre su trámite. 
             </p>
