@@ -12,8 +12,8 @@
     url('../../assets/images/background-pag-sandri.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
-  background-attachment: scroll; /* Evita que el fondo quede fijo respecto al viewport */
+  background-size: cover;
+  background-attachment: scroll;
   color: var(--color-blanco);
   padding: 7rem 0 5rem;
   position: relative;
@@ -730,4 +730,83 @@
     padding: 0.8rem 1rem;
     font-size: 0.9rem;
   }
+}
+
+/* =========== ESTILOS PARA LA GALERÍA Y UBICACIÓN (MODIFICADO) ============== */
+
+/* ELIMINAMOS .layout-grid-ubicacion PORQUE YA NO SE USA */
+
+/* 1. Estilos para el carrusel */
+.galeria-ubicacion {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Altura ajustada para una vista apaisada */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 3rem; /* Espacio entre la galería y el contenido de abajo */
+}
+
+/* 2. Estilos para las fotos DENTRO del carrusel */
+.foto-galeria {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation-name: fadeSlider;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+
+.foto-galeria:nth-child(1) { animation-delay: 0s; }
+.foto-galeria:nth-child(2) { animation-delay: 3s; }
+.foto-galeria:nth-child(3) { animation-delay: 6s; }
+
+/* 3. La animación sigue siendo la misma */
+@keyframes fadeSlider {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  33% { opacity: 1; }
+  38% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 4. Quitamos el margin-top de info-ubicacion que ya no es necesario */
+.info-ubicacion {
+  margin-top: 0;
+}
+
+/* ELIMINAMOS LA REGLA RESPONSIVE PARA .layout-grid-ubicacion */
+
+
+/* =========== ESTILOS PARA EL BOTÓN DE WHATSAPP FLOTANTE ============== */
+.whatsapp-flotante {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1);
+  background-color: #128C7E;
+}
+
+.whatsapp-flotante svg {
+  font-size: 32px;
 }

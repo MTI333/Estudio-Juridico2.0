@@ -60,7 +60,6 @@ const Navbar = () => {
     { label: 'Inicio', path: '/', section: 'hero' },
     { label: 'Información Profesional', path: '/', section: 'informacion-profesional' },
     { label: 'Servicios', path: '/', section: 'servicios' },
-    { label: 'Instalaciones', path: '/', section: 'instalaciones' },
     { label: 'Contacto', path: '/', section: 'ubicacion' }
   ];
 
