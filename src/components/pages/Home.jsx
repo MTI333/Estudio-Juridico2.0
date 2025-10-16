@@ -4,13 +4,19 @@ import Hero from '../sections/Home/Hero';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
 import './Home.css';
-import { FaWhatsapp } from 'react-icons/fa';
 import instalacionesImage from '../../assets/images/estudio-fisico-sandri.jpg';
-import wppIco from '../../assets/images/wpp-icon.jpg';
 
+// --- Importaciones de la galería ---
 import foto1 from '../../assets/images/Estudio-afuera1.jpg';
 import foto2 from '../../assets/images/estudio-fisico-sandri.jpg';
 import foto3 from '../../assets/images/Estudio-puerta.jpg';
+
+// --- CORRECCIÓN: Rutas ajustadas para la ubicación de Home.jsx ---
+import iconoExperiencia from '../../assets/images/iconos/balanza.png';
+import iconoResultados from '../../assets/images/iconos/cuenta-verificada.png';
+
+// --- CORRECCIÓN: Ruta ajustada para el icono de WhatsApp ---
+import iconoWhatsApp from '../../assets/images/iconos/whatsapp.png';
 
 
 const Home = () => {
@@ -22,7 +28,7 @@ const Home = () => {
   };
 
   const handleEmailClick = () => {
-    const email = "SandraMarcelaPolicastro@gmail.com";
+    const email = "sandrapolicastro@gmail.com";
     const subject = "Consulta Legal";
     const body = "Hola, me gustaría solicitar una consulta legal.";
     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -60,13 +66,10 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Informacion Profesional Section */}
       <section id="informacion-profesional"><InformacionProfesional /></section>
       
-      {/* Servicios Section */}
       <section id="servicios"><Servicios /></section>
       
-      {/* Features Section */}
       <section className="features-section">
         <div className="container">
           <div className="section-header">
@@ -78,16 +81,19 @@ const Home = () => {
           </div>
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon">⚖️</div>
+              <div className="feature-icon">
+                <img src={iconoExperiencia} alt="Icono de Experiencia Comprobada" />
+              </div>
               <h3 className="feature-title">Experiencia Comprobada</h3>
               <p className="feature-description">
                 Más de 20 años de trayectoria en el ejercicio del derecho 
                 con casos exitosos en diversas áreas legales.
               </p>
             </div>
-        
             <div className="feature-card">
-              <div className="feature-icon">🎯</div>
+              <div className="feature-icon">
+                <img src={iconoResultados} alt="Icono de Resultados Efectivos" />
+              </div>
               <h3 className="feature-title">Resultados Efectivos</h3>
               <p className="feature-description">
                 Enfoque en obtener los mejores resultados posibles mediante 
@@ -97,30 +103,19 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
-      {/* Instalaciones Section */}
-      
-
-      {/* ========================================================== */}
-      {/* ===           SECCIÓN DE UBICACIÓN ACTUALIZADA           === */}
-      {/* ========================================================== */}
       <section className="ubicacion-section" id="ubicacion">
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Nuestra Ubicación</h2>
             <p className="section-subtitle">
-              Estamos ubicados en la ciudad de Villa Dolores provincia de Cordoba.
+              Estamos ubicados en la ciudad de Villa Dolores, provincia de Cordoba.
             </p>
           </div>
-
-          {/* --- GALERÍA DE FOTOS (ENCIMA DEL MAPA) --- */}
           <div className="galeria-ubicacion">
             <img src={foto1} alt="Galería de la oficina 1" className="foto-galeria"/>
             <img src={foto2} alt="Galería de la oficina 2" className="foto-galeria"/>
             <img src={foto3} alt="Galería de la oficina 3" className="foto-galeria"/>
           </div>
-
-          {/* --- MAPA E INFORMACIÓN (DEBAJO DE LA GALERÍA) --- */}
           <div className="ubicacion-content">
             <div className="mapa-container">
               <iframe
@@ -135,7 +130,6 @@ const Home = () => {
                 className="google-maps-iframe"
               ></iframe>
             </div>
-            
             <div className="info-ubicacion">
               <h3>Información de Contacto</h3>
               <div className="contacto-info-grid">
@@ -143,7 +137,7 @@ const Home = () => {
                   <div className="contacto-icon">📍</div>
                   <div className="contacto-details">
                     <h4>Dirección</h4>
-                    <p>Dr. Ramón J. Cárcano N° 55 Loc. 1, X5870 Villa Dolores, provincia de Córdoba</p>
+                    <p>Dr. Ramón J. Cárcano N° 55 Loc. 1, X5870 Villa Dolores, Córdoba</p>
                   </div>
                 </div>
                 <div className="contacto-item">
@@ -151,6 +145,13 @@ const Home = () => {
                   <div className="contacto-details">
                     <h4>Horario de Atención</h4>
                     <p>Lunes a Viernes: (8:00 - 13:00 hs) (17:00 - 20:00 hs)</p>
+                  </div>
+                </div>
+                <div className="contacto-item">
+                  <div className="contacto-icon">📧</div>
+                  <div className="contacto-details">
+                    <h4>Email</h4>
+                    <p>sandrapolicastro@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -170,7 +171,7 @@ const Home = () => {
       </section>
       
       <button className="whatsapp-flotante" onClick={handleWhatsAppClick}>
-        <wppIco/>
+        <img src={iconoWhatsApp} alt="Contactar por WhatsApp" />
       </button>
     </div>
   );

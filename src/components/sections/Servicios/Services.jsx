@@ -2,13 +2,20 @@
 import React from 'react';
 import './Services.css';
 
+// 1. IMPORTAMOS LAS IMÁGENES DE LOS ICONOS
+// (Asegúrate de que estos nombres de archivo coincidan con los tuyos)
+import iconoAsesoramiento from '../../../assets/images/iconos/balanza.png';
+import iconoFamilia from '../../../assets/images/iconos/familia.png';
+import iconoLaboral from '../../../assets/images/iconos/portafolio.png';
+import iconoCivil from '../../../assets/images/iconos/grafico-de-barras.png';
+
 const Servicios = () => {
   const servicios = [
     {
       id: 1,
       titulo: "ASESORAMIENTO JURIDICO INTEGRAL",
       descripcion: "",
-      icono: "⚖️",
+      icono: iconoAsesoramiento, // <-- 2. REEMPLAZAMOS EL EMOJI POR LA IMAGEN IMPORTADA
       caracteristicas: [
         "Análisis de casos",
         "Estrategias legales",
@@ -19,21 +26,19 @@ const Servicios = () => {
       id: 2,
       titulo: "DERECHO DE FAMILIA Y SUCESIONES",
       descripcion: "",
-      icono: "👪",
+      icono: iconoFamilia, // <-- 2. REEMPLAZAMOS EL EMOJI
       caracteristicas: [
         "Divorcios",
         "Adopciones",
         "Sucesiones",
         "Cuota alimentaria",
-        
       ]
     },
-  
     {
       id: 3,
       titulo: "DERECHO LABORAL",
       descripcion: "",
-      icono: "👥",
+      icono: iconoLaboral, // <-- 2. REEMPLAZAMOS EL EMOJI
       caracteristicas: [
         "Despidos",
         "Reclamos laborales",
@@ -44,7 +49,7 @@ const Servicios = () => {
       id: 4,
       titulo: "DERECHO CIVIL Y COMERCIAL",
       descripcion: "",
-      icono: "📊",
+      icono: iconoCivil, // <-- 2. REEMPLAZAMOS EL EMOJI
       caracteristicas: [
         "Contratos",
         "Cobranzas",
@@ -55,20 +60,16 @@ const Servicios = () => {
         "Juicios de reinvidicacion de inmuebles",
       ]
     },
-    
-   
-    
-    
   ];
 
   return (
     <section className="servicios" id="servicios">
       <div className="container">
         <div className="section-header compact">
-          
           <h3 className="section-title"> Areas De Especializacion </h3>
           <p className="section-subtitle">
-            Ofrecemos una amplia gama de servicios legales en toda la provincia de Córdoba adaptados a sus necesidades.
+            Ofrecemos una amplia gama de servicios legales, tanto presencial como virtual, 
+            en toda la provincia de Córdoba.
           </p>
         </div>
         
@@ -76,7 +77,10 @@ const Servicios = () => {
           {servicios.map(servicio => (
             <div key={servicio.id} className="servicio-card">
               <div className="servicio-header">
-                <div className="servicio-icon">{servicio.icono}</div>
+                <div className="servicio-icon">
+                  {/* 3. CAMBIAMOS EL DIV POR UNA ETIQUETA IMG */}
+                  <img src={servicio.icono} alt={`Icono de ${servicio.titulo}`} />
+                </div>
                 <h3 className="servicio-titulo">{servicio.titulo}</h3>
               </div>
               
@@ -90,13 +94,9 @@ const Servicios = () => {
                   </li>
                 ))}
               </ul>
-              
-             
             </div>
           ))}
         </div>
-
-        
       </div>
     </section>
   );

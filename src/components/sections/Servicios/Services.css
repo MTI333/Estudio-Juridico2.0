@@ -1,4 +1,4 @@
-/* src/components/sections/Servicios.css */
+/* src/components/sections/Services.css */
 .servicios {
   padding: var(--space-xl) 0;
   background: rgba(255, 255, 255, 0.85);
@@ -140,6 +140,13 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+/* ===== NUEVO: ESTILO PARA LA IMAGEN DENTRO DEL CONTENEDOR DEL ÍCONO ===== */
+.servicio-icon img {
+  width: 35px;      /* Ajusta el tamaño de la imagen */
+  height: 35px;
+  object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
 .servicio-icon::before {
