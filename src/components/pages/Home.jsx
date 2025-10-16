@@ -109,7 +109,7 @@ const Home = () => {
           <div className="section-header">
             <h2 className="section-title">Nuestra Ubicación</h2>
             <p className="section-subtitle">
-              Estamos ubicados en la ciudad de Villa Dolores Cordoba.
+              Estamos ubicados en la ciudad de Villa Dolores provincia de Cordoba.
             </p>
           </div>
 
@@ -143,7 +143,7 @@ const Home = () => {
                   <div className="contacto-icon">📍</div>
                   <div className="contacto-details">
                     <h4>Dirección</h4>
-                    <p>Dr. Ramón J. Cárcano N° 55 Loc. 1, X5870 Villa Dolores, Córdoba</p>
+                    <p>Dr. Ramón J. Cárcano N° 55 Loc. 1, X5870 Villa Dolores, provincia de Córdoba</p>
                   </div>
                 </div>
                 <div className="contacto-item">
