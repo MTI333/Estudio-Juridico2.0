@@ -1,7 +1,7 @@
 /* src/components/common/Header/Navbar.css */
 .navbar {
   background: linear-gradient(135deg, var(--color-oliva) 0%, var(--color-oliva-claro) 100%);
-  padding: 1.2rem 0;
+  padding: 1.5rem 0; /* <-- CAMBIO: Aumentado de 1.2rem para dar más espacio vertical */
   color: var(--color-blanco);
   position: fixed;
   width: 100%;
@@ -13,7 +13,7 @@
 }
 
 .navbar.scrolled {
-  padding: 0.8rem 0;
+  padding: 1rem 0; /* <-- CAMBIO: Aumentado de 0.8rem */
   background: rgba(38, 80, 21, 0.98);
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
@@ -29,7 +29,7 @@
   align-items: center;
 }
 
-/* Logo Styles - Más elegante */
+/* Logo Styles */
 .nav-logo {
   text-decoration: none;
   display: flex;
@@ -49,7 +49,7 @@
 }
 
 .logo-image {
-  height: 55px;
+  height: 75px; /* <-- CAMBIO PRINCIPAL: Aumentado de 55px a 75px */
   width: auto;
   border-radius: 10px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -64,9 +64,9 @@
 }
 
 .logo-fallback {
-  font-size: 2.4rem;
-  height: 55px;
-  width: 55px;
+  font-size: 3rem; /* <-- CAMBIO: Aumentado para el nuevo tamaño */
+  height: 75px;   /* <-- CAMBIO: Aumentado de 55px */
+  width: 75px;    /* <-- CAMBIO: Aumentado de 55px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Menu - Centrado y mejor espaciado */
+/* Navigation Menu */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -210,7 +210,7 @@
   width: 70%;
 }
 
-/* Mobile Menu Toggle - Mejorado */
+/* Mobile Menu Toggle */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -254,7 +254,7 @@
   background: var(--color-dorado);
 }
 
-/* Mobile Menu - Más elegante */
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -344,7 +344,7 @@
   transform: translateY(-50%) scale(1);
 }
 
-/* Responsive Design - Mejorado */
+/* Responsive Design */
 @media (max-width: 1024px) {
   .nav-menu {
     gap: 1.5rem;
@@ -372,13 +372,13 @@
   }
 
   .logo-image {
-    height: 50px;
+    height: 65px; /* <-- CAMBIO: Aumentado de 50px */
   }
 
   .logo-fallback {
-    height: 50px;
-    width: 50px;
-    font-size: 2.2rem;
+    height: 65px; /* <-- CAMBIO: Aumentado de 50px */
+    width: 65px;  /* <-- CAMBIO: Aumentado de 50px */
+    font-size: 2.8rem;
   }
 
   .nav-container {
@@ -400,13 +400,13 @@
   }
   
   .logo-image {
-    height: 48px;
+    height: 60px; /* <-- CAMBIO: Aumentado de 48px */
   }
   
   .logo-fallback {
-    height: 48px;
-    width: 48px;
-    font-size: 2.1rem;
+    height: 60px; /* <-- CAMBIO: Aumentado de 48px */
+    width: 60px;  /* <-- CAMBIO: Aumentado de 48px */
+    font-size: 2.5rem;
   }
 }
 
@@ -416,13 +416,13 @@
   }
 
   .logo-image {
-    height: 45px;
+    height: 55px; /* <-- CAMBIO: Aumentado de 45px */
   }
 
   .logo-fallback {
-    height: 45px;
-    width: 45px;
-    font-size: 2rem;
+    height: 55px; /* <-- CAMBIO: Aumentado de 45px */
+    width: 55px;  /* <-- CAMBIO: Aumentado de 45px */
+    font-size: 2.4rem;
   }
 
   .mobile-nav-link {
