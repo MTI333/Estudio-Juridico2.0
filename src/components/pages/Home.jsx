@@ -17,7 +17,7 @@ import iconoResultados from '../../assets/images/iconos/cuenta-verificada.png';
 
 // --- CORRECCIÓN: Ruta ajustada para el icono de WhatsApp ---
 import iconoWhatsApp from '../../assets/images/iconos/whatsapp.png';
-
+import iconoWhatsApp2 from '../../assets/images/iconos/whatsapp2.png';
 
 const Home = () => {
   const handleWhatsAppClick = () => {
@@ -113,8 +113,8 @@ const Home = () => {
           </div>
           <div className="galeria-ubicacion">
             <img src={foto1} alt="Galería de la oficina 1" className="foto-galeria"/>
-            <img src={foto2} alt="Galería de la oficina 2" className="foto-galeria"/>
-            <img src={foto3} alt="Galería de la oficina 3" className="foto-galeria"/>
+            <img src={foto3} alt="Galería de la oficina 2" className="foto-galeria"/>
+            <img src={foto2} alt="Galería de la oficina 3" className="foto-galeria"/>
           </div>
           <div className="ubicacion-content">
             <div className="mapa-container">
@@ -171,7 +171,7 @@ const Home = () => {
       </section>
       
       <button className="whatsapp-flotante" onClick={handleWhatsAppClick}>
-        <img src={iconoWhatsApp} alt="Contactar por WhatsApp" />
+        <img src={iconoWhatsApp2} alt="Contactar por WhatsApp" />
       </button>
     </div>
   );
