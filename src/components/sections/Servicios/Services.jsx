@@ -68,8 +68,7 @@ const Servicios = () => {
         <div className="section-header compact">
           <h3 className="section-title"> Areas De Especializacion </h3>
           <p className="section-subtitle">
-            Ofrecemos una amplia gama de servicios legales, tanto presencial como virtual, 
-            en toda la provincia de Córdoba.
+            Ofrecemos una amplia gama de servicios legales, en toda la provincia de Córdoba, con atención presencial o virtual.
           </p>
         </div>
         
