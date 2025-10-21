@@ -10,7 +10,8 @@ import instalacionesImage from '../../assets/images/estudio-fisico-sandri.jpg';
 import foto1 from '../../assets/images/Estudio-afuera1.jpg';
 import foto2 from '../../assets/images/estudio-fisico-sandri.jpg';
 import foto3 from '../../assets/images/Estudio-puerta.jpg';
-
+import afuera from '../../assets/images/afuera.jpg';
+import adentro from '../../assets/images/adentro.jpg';
 // --- CORRECCIÓN: Rutas ajustadas para la ubicación de Home.jsx ---
 import iconoExperiencia from '../../assets/images/iconos/balanza.png';
 import iconoResultados from '../../assets/images/iconos/cuenta-verificada.png';
@@ -86,8 +87,7 @@ const Home = () => {
               </div>
               <h3 className="feature-title">Experiencia Comprobada</h3>
               <p className="feature-description">
-                Más de 20 años de trayectoria en el ejercicio del derecho 
-                con casos exitosos en diversas áreas legales.
+                Actualmente con 28 años de experiencia.
               </p>
             </div>
             <div className="feature-card">
@@ -112,9 +112,9 @@ const Home = () => {
             </p>
           </div>
           <div className="galeria-ubicacion">
-            <img src={foto1} alt="Galería de la oficina 1" className="foto-galeria"/>
-            <img src={foto3} alt="Galería de la oficina 2" className="foto-galeria"/>
-            <img src={foto2} alt="Galería de la oficina 3" className="foto-galeria"/>
+            <img src={afuera} alt="Galería de la oficina 1" className="foto-galeria"/>
+            <img src={adentro} alt="Galería de la oficina 2" className="foto-galeria"/>
+           
           </div>
           <div className="ubicacion-content">
             <div className="mapa-container">

@@ -485,15 +485,20 @@
 }
 
 /* Galería de Ubicación */
+/* src/components/pages/Home.css */
+
+/* ... (Todo tu CSS anterior) ... */
+
+/* Galería de Ubicación */
 .galeria-ubicacion {
   position: relative;
   width: 100%;
-  /* --- CAMBIO AQUÍ: Aumentamos la altura --- */
-  height: 700px; /* Puedes probar con 600px, 700px, etc. */
+  height: 650px; /* Esta es la altura que definiste */
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin-bottom: 3rem;
+  /* El display:flex ya no es necesario si usamos object-fit: cover */
 }
 
 .foto-galeria {
@@ -501,41 +506,52 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Esta propiedad hace que la imagen ocupe todo el espacio de .galeria-ubicacion */
+  height: 100%;
+  
+  /* --- 1. SOLUCIÓN VISUAL --- */
+  /* Cambiamos a 'cover' para que la foto llene el espacio, recortando los bordes si es necesario */
   object-fit: cover;
+  
   opacity: 0;
+  
+  /* --- 2. SOLUCIÓN DE TIEMPO (Parte A) --- */
+  /* Duración total del ciclo: 5s (foto 1) + 5s (foto 2) = 10s */
   animation-name: fadeSlider;
-  animation-duration: 9s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 
-.foto-galeria:nth-child(1) { animation-delay: 0s; }
-.foto-galeria:nth-child(2) { animation-delay: 3s; }
-.foto-galeria:nth-child(3) { animation-delay: 6s; }
+/* --- 2. SOLUCIÓN DE TIEMPO (Parte B) --- */
+/* La primera foto empieza inmediatamente */
+.foto-galeria:nth-child(1) {
+  animation-delay: 0s;
+}
+/* La segunda foto espera 5 segundos (mientras se muestra la primera) */
+.foto-galeria:nth-child(2) {
+  animation-delay: 5s;
+}
 
+/* --- 2. SOLUCIÓN DE TIEMPO (Parte C) --- */
+/* Definimos los keyframes para UN ciclo de 10s.
+  Cada foto tendrá un "slot" de 5 segundos (50% de la duración total).
+  Haremos una transición suave de 1 segundo (10% de la duración).
+*/
 @keyframes fadeSlider {
-  0% { opacity: 0; }
-  5% { opacity: 1; }
-  33% { opacity: 1; }
-  38% { opacity: 0; }
-  100% { opacity: 0; }
+  0%   { opacity: 0; } /* Empieza invisible */
+  10%  { opacity: 1; } /* 1. Aparece (1s) */
+  40%  { opacity: 1; } /* 2. Se mantiene visible (3s) */
+  50%  { opacity: 0; } /* 3. Se desvanece (1s) */
+  100% { opacity: 0; } /* 4. Permanece invisible (5s) mientras la otra foto hace su ciclo */
 }
-
-.info-ubicacion {
-  margin-top: 0;
-}
-
-/* ... (Responsive Design y Animaciones) ... */
 
 @media (max-width: 968px) {
-  .instalaciones-content,
-  .ubicacion-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .galeria-ubicacion {
+    height: 450px;
   }
 }
 
-/* =========== ESTILOS PARA EL BOTÓN DE WHATSAPP FLOTANTE ============== */
+
+
 /* =========== ESTILOS PARA EL BOTÓN DE WHATSAPP FLOTANTE ============== */
 .whatsapp-flotante {
   position: fixed;
