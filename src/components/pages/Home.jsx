@@ -7,7 +7,7 @@ import './Home.css';
 import instalacionesImage from '../../assets/images/estudio-fisico-sandri.jpg';
 
 // --- Importaciones de la galería ---
-import foto1 from '../../assets/images/Estudio-afuera1.jpg';
+import foto1 from '../../assets/images/Estudio-afuera3.jpg';
 import foto2 from '../../assets/images/estudio-fisico-sandri.jpg';
 import foto3 from '../../assets/images/Estudio-puerta.jpg';
 import afuera from '../../assets/images/afuera.jpg';
