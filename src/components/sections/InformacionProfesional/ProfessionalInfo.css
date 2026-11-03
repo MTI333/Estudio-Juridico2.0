@@ -35,7 +35,6 @@
 }
 
 .titulo-principal h1 {
-  font-size: var(4rem);
   color: var(--color-oliva);
   margin-bottom: var(--space-sm);
   font-weight: 700;

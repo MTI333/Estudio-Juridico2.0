@@ -3,15 +3,6 @@ import React from 'react';
 import './ProfessionalInfo.css';
 
 const InformacionProfesional = () => {
-  const areasEspecializacion = [
-    "Derecho de Familia y Sucesiones",
-    "Derecho Civil y Contractual", 
-    "Derecho Laboral",
-    "Procesal Civil",
-    "Mediación y Resolución Alternativa de Conflictos",
-    "Asesoramiento Legal Integral"
-  ];
-
   return (
     <section className="informacion-profesional" id="informacion-profesional">
       <div className="container">
