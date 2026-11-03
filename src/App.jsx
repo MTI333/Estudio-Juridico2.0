@@ -5,7 +5,6 @@ import Home from "./components/pages/Home";
 import Servicios from "./components/pages/Servicios";
 import InformacionProfesional from "./components/pages/InformacionProfesional";
 import Contacto from "./components/pages/Contacto";
-import RealizarConsulta from "./components/pages/RealizarConsulta";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/informacion-profesional" element={<InformacionProfesional />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/realizar-consulta" element={<RealizarConsulta />} />
         </Routes>
       </Layout>
     </Router>

@@ -10,11 +10,6 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Debug: verificar si la imagen se carga
-  useEffect(() => {
-    console.log('Logo image path:', logoImage);
-  }, []);
-
   // Efecto para detectar scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +25,7 @@ const Navbar = () => {
     const message = "Hola, me gustaría solicitar una consulta legal.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setIsMobileMenuOpen(false);
   };
 
@@ -38,7 +33,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     if (location.pathname !== '/') {
       // Si no está en home, navegar al home primero
-      window.location.href = `/#${sectionId}`;
+      window.location.assign(`/#${sectionId}`);
     } else {
       // Si está en home, hacer scroll suave
       const element = document.getElementById(sectionId);
@@ -79,9 +74,6 @@ const Navbar = () => {
                 // Mostrar fallback
                 const fallback = document.querySelector('.logo-fallback');
                 if (fallback) fallback.style.display = 'block';
-              }}
-              onLoad={(e) => {
-                console.log('Logo cargado exitosamente');
               }}
             />
           </div>

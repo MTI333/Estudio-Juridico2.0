@@ -4,12 +4,8 @@ import Hero from '../sections/Home/Hero';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
 import './Home.css';
-import instalacionesImage from '../../assets/images/estudio-fisico-sandri.jpg';
 
 // --- Importaciones de la galería ---
-import foto1 from '../../assets/images/Estudio-afuera3.jpg';
-import foto2 from '../../assets/images/estudio-fisico-sandri.jpg';
-import foto3 from '../../assets/images/Estudio-puerta.jpg';
 import afuera from '../../assets/images/afuera.jpg';
 import adentro from '../../assets/images/adentro.jpg';
 // --- CORRECCIÓN: Rutas ajustadas para la ubicación de Home.jsx ---
@@ -17,7 +13,6 @@ import iconoExperiencia from '../../assets/images/iconos/balanza.png';
 import iconoResultados from '../../assets/images/iconos/cuenta-verificada.png';
 
 // --- CORRECCIÓN: Ruta ajustada para el icono de WhatsApp ---
-import iconoWhatsApp from '../../assets/images/iconos/whatsapp.png';
 import iconoWhatsApp2 from '../../assets/images/iconos/whatsapp2.png';
 
 const Home = () => {
@@ -25,7 +20,7 @@ const Home = () => {
     const phoneNumber = "5493544437481";
     const message = "Hola, me gustaría solicitar una consulta legal.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleEmailClick = () => {
@@ -125,7 +120,7 @@ const Home = () => {
                 style={{ border: 0, borderRadius: '12px' }}
                 allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Ubicación del Estudio Jurídico"
                 className="google-maps-iframe"
               ></iframe>
