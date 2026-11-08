@@ -1,8 +1,11 @@
 // src/components/pages/Home.jsx
 import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
+import { LuClock, LuMail, LuMapPin } from 'react-icons/lu';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
 import GlassPanel from '../glass/GlassPanel';
+import { openWhatsApp } from '../utils/openWhatsApp';
 import { scrollToSection } from '../utils/scrollToSection';
 import './Home.css';
 
@@ -13,17 +16,7 @@ import adentro from '../../assets/images/adentro.jpg';
 import iconoExperiencia from '../../assets/images/iconos/balanza.png';
 import iconoResultados from '../../assets/images/iconos/cuenta-verificada.png';
 
-// --- CORRECCIÓN: Ruta ajustada para el icono de WhatsApp ---
-import iconoWhatsApp2 from '../../assets/images/iconos/whatsapp2.png';
-
 const Home = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "5493544437481";
-    const message = "Hola, me gustaría solicitar una consulta legal.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  };
-
   const handleEmailClick = () => {
     const email = "sandrapolicastro@gmail.com";
     const subject = "Consulta Legal";
@@ -102,44 +95,44 @@ const Home = () => {
               Estamos ubicados en la ciudad de Villa Dolores, provincia de Cordoba.
             </p>
           </div>
-          <div className="galeria-ubicacion">
-            <img src={afuera} alt="Galería de la oficina 1" className="foto-galeria"/>
-            <img src={adentro} alt="Galería de la oficina 2" className="foto-galeria"/>
-           
-          </div>
+          <GlassPanel className="galeria-marco">
+            <div className="galeria-ubicacion">
+              <img src={afuera} alt="Galería de la oficina 1" className="foto-galeria"/>
+              <img src={adentro} alt="Galería de la oficina 2" className="foto-galeria"/>
+            </div>
+          </GlassPanel>
           <div className="ubicacion-content">
-            <div className="mapa-container">
+            <GlassPanel className="mapa-container">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.823908860363!2d-65.19062862497645!3d-31.95632942442464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942cd81335359169%3A0x33333919e728455d!2sDr.%20Ram%C3%B3n%20J.%20C%C3%A1rcano%2055%2C%20X5870%20Villa%20Dolores%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1728978997677!5m2!1ses-419!2sar"
                 width="100%"
                 height="450"
-                style={{ border: 0, borderRadius: '12px' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
                 title="Ubicación del Estudio Jurídico"
                 className="google-maps-iframe"
               ></iframe>
-            </div>
-            <div className="info-ubicacion">
+            </GlassPanel>
+            <GlassPanel className="info-ubicacion">
               <h3>Información de Contacto</h3>
               <div className="contacto-info-grid">
                 <div className="contacto-item">
-                  <div className="contacto-icon">📍</div>
+                  <div className="contacto-icon"><LuMapPin aria-hidden="true" /></div>
                   <div className="contacto-details">
                     <h4>Dirección</h4>
                     <p>Dr. Ramón J. Cárcano N° 55 Loc. 1, X5870 Villa Dolores, Córdoba</p>
                   </div>
                 </div>
                 <div className="contacto-item">
-                  <div className="contacto-icon">🕒</div>
+                  <div className="contacto-icon"><LuClock aria-hidden="true" /></div>
                   <div className="contacto-details">
                     <h4>Horario de Atención</h4>
                     <p>Lunes a Viernes: (8:00 - 13:00 hs) (17:00 - 20:00 hs)</p>
                   </div>
                 </div>
                 <div className="contacto-item">
-                  <div className="contacto-icon">📧</div>
+                  <div className="contacto-icon"><LuMail aria-hidden="true" /></div>
                   <div className="contacto-details">
                     <h4>Email</h4>
                     <p>sandrapolicastro@gmail.com</p>
@@ -147,23 +140,19 @@ const Home = () => {
                 </div>
               </div>
               <div className="ubicacion-actions">
-                <button className="btn btn-primary whatsapp-btn" onClick={handleWhatsAppClick}>
-                  <span className="whatsapp-icon">💬</span>
+                <button type="button" className="btn btn-whatsapp" onClick={openWhatsApp}>
+                  <FaWhatsapp aria-hidden="true" />
                   WhatsApp
                 </button>
-                <button className="btn btn-secondary email-btn" onClick={handleEmailClick}>
-                  <span className="email-icon">✉️</span>
+                <button type="button" className="btn btn-ghost" onClick={handleEmailClick}>
+                  <LuMail aria-hidden="true" />
                   Enviar Email
                 </button>
               </div>
-            </div>
+            </GlassPanel>
           </div>
         </div>
       </section>
-      
-      <button className="whatsapp-flotante" onClick={handleWhatsAppClick}>
-        <img src={iconoWhatsApp2} alt="Contactar por WhatsApp" />
-      </button>
     </div>
   );
 };

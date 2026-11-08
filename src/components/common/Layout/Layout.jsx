@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../Header/Navbar';
 import Footer from '../Footer/Footer';
+import WhatsAppFloat from '../WhatsAppFloat/WhatsAppFloat';
 import './Layout.css'; // Importa el CSS
 
 const Layout = ({ children }) => {
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };

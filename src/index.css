@@ -187,6 +187,12 @@ section[id] {
   transform: translateY(-1px);
 }
 
+.btn svg {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+}
+
 /* Oliva sobre dorado da 4,46:1: necesita tamaño de texto grande para cumplir AA (3:1). */
 .btn-gold {
   background: var(--color-dorado);
