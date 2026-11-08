@@ -137,6 +137,11 @@ body::before {
   outline-offset: 2px;
 }
 
+/* Lo que se muestra al ir a una sección queda debajo de la barra. */
+section[id] {
+  scroll-margin-top: calc(var(--nav-h) + 40px);
+}
+
 /* ENCABEZADOS DE SECCIÓN */
 .section-header {
   display: grid;

@@ -1,160 +1,92 @@
 // src/components/common/Header/Navbar.jsx
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 // Si la imagen está en src/assets/images/logo-sandri.jpg
 import logoImage from '../../../assets/images/logo-sandri.jpg';
+import GlassPanel from '../../glass/GlassPanel';
+import { scrollToSection } from '../../utils/scrollToSection';
+import NavTrack from './NavTrack';
+import { NAV_ITEMS } from './navSections';
+import { useActiveSection } from './useActiveSection';
 import './Navbar.css';
 
+const SECTION_IDS = NAV_ITEMS.map((item) => item.section);
+
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const header = useRef(null);
+  const toggle = useRef(null);
+  const active = useActiveSection(SECTION_IDS);
 
-  // Efecto para detectar scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    if (!isMobileMenuOpen) return undefined;
+    const close = () => setIsMobileMenuOpen(false);
+    const onKeyDown = (e) => {
+      if (e.key !== 'Escape') return;
+      close();
+      toggle.current?.focus();
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    const onPointerDown = (e) => {
+      if (!header.current?.contains(e.target)) close();
+    };
+    const mobile = window.matchMedia('(max-width: 968px)');
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    mobile.addEventListener('change', close);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+      mobile.removeEventListener('change', close);
+    };
+  }, [isMobileMenuOpen]);
 
-  // Función para redirigir a WhatsApp
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "5493544437481";
-    const message = "Hola, me gustaría solicitar una consulta legal.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  const handleSelect = (sectionId) => {
     setIsMobileMenuOpen(false);
+    scrollToSection(sectionId);
   };
 
-  // Función para scroll suave a secciones
-  const scrollToSection = (sectionId) => {
-    if (location.pathname !== '/') {
-      // Si no está en home, navegar al home primero
-      window.location.assign(`/#${sectionId}`);
-    } else {
-      // Si está en home, hacer scroll suave
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    setIsMobileMenuOpen(false);
-  };
-
-  // Función para manejar clics en enlaces
-  const handleNavClick = (path, sectionId = null) => {
-    if (path === '/' && sectionId) {
-      scrollToSection(sectionId);
-    }
-  };
-
-  const navItems = [
-    { label: 'Inicio', path: '/', section: 'hero' },
-    { label: 'Información Profesional', path: '/', section: 'informacion-profesional' },
-    { label: 'Servicios', path: '/', section: 'servicios' },
-    { label: 'Contacto', path: '/', section: 'ubicacion' }
-  ];
-
+  // El menú va afuera de la píldora: adentro de un vidrio, otro vidrio no ve el fondo.
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        {/* Logo - Solo a la izquierda */}
-        <Link to="/" className="nav-logo">
-          <div className="logo-container">
-            <img 
-              src={logoImage} 
-              alt="Estudio Jurídico" 
-              className="logo-image"
-              onError={(e) => {
-                console.error('Error cargando el logo:', e);
-                e.target.style.display = 'none';
-                // Mostrar fallback
-                const fallback = document.querySelector('.logo-fallback');
-                if (fallback) fallback.style.display = 'block';
-              }}
-            />
-          </div>
+    <header ref={header} id="site-nav" className="site-nav">
+      <GlassPanel as="nav" pill className="nav-pill">
+        <Link to="/" className="nav-logo" onClick={() => setIsMobileMenuOpen(false)}>
+          <img
+            src={logoImage}
+            alt="Estudio Jurídico"
+            className="logo-image"
+            onError={(e) => {
+              console.error('Error cargando el logo:', e);
+              e.target.style.display = 'none';
+              // Mostrar fallback
+              const fallback = document.querySelector('.logo-fallback');
+              if (fallback) fallback.style.display = 'block';
+            }}
+          />
         </Link>
 
-        {/* Menú Desktop */}
-        <div className="nav-menu">
-          {navItems.map((item, index) => (
-            <div
-              key={index}
-              className="nav-item"
-              onClick={() => handleNavClick(item.path, item.section)}
-            >
-              {item.section && item.path === '/' ? (
-                <span className="nav-link">
-                  {item.label}
-                </span>
-              ) : (
-                <Link to={item.path} className="nav-link">
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
-        </div>
+        <NavTrack axis="x" active={active} onSelect={handleSelect} />
 
-        {/* Botón WhatsApp Desktop */}
-        <button 
-          className="whatsapp-btn desktop-whatsapp"
-          onClick={handleWhatsAppClick}
-          title="Contactar por WhatsApp"
+        <button
+          ref={toggle}
+          type="button"
+          className="nav-toggle"
+          aria-label="Menú"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
         >
-          <span className="whatsapp-icon">💬</span>
-          <span className="whatsapp-text">WhatsApp</span>
+          <span />
+          <span />
+          <span />
         </button>
+      </GlassPanel>
 
-        {/* Menú Mobile */}
-        <div 
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        {/* Menú Mobile Desplegable */}
-        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          {navItems.map((item, index) => (
-            <div
-              key={index}
-              className="mobile-nav-item"
-              onClick={() => handleNavClick(item.path, item.section)}
-            >
-              {item.section && item.path === '/' ? (
-                <span className="mobile-nav-link">
-                  {item.label}
-                </span>
-              ) : (
-                <Link 
-                  to={item.path} 
-                  className="mobile-nav-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
-          
-          {/* Botón WhatsApp Mobile */}
-          <button 
-            className="mobile-whatsapp-btn"
-            onClick={handleWhatsAppClick}
-          >
-            <span className="whatsapp-icon">💬</span>
-            Contactar por WhatsApp
-          </button>
-        </div>
-      </div>
-    </nav>
+      {isMobileMenuOpen && (
+        <GlassPanel id="mobile-menu" className="mobile-menu">
+          <NavTrack axis="y" active={active} onSelect={handleSelect} />
+        </GlassPanel>
+      )}
+    </header>
   );
 };
 
