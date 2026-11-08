@@ -10,6 +10,11 @@
   padding: 0 var(--nav-gutter);
 }
 
+.nav-pill,
+.mobile-menu {
+  background: linear-gradient(var(--glass-scrim-nav), var(--glass-scrim-nav)), var(--glass-fill);
+}
+
 .nav-pill {
   height: var(--nav-h);
   padding: 0 9px;
@@ -75,7 +80,8 @@
   will-change: transform;
   opacity: 0;
   transition: opacity 0.2s;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(212, 175, 55, 0.14));
+  /* El texto del ítem es blanco: el relleno y el brillo no pueden bajarle el contraste de AA. */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(212, 175, 55, 0.08)), rgba(18, 36, 10, 0.2);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
     inset 0 0 0 1px rgba(212, 175, 55, 0.6),
@@ -88,7 +94,7 @@
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: radial-gradient(80px 22px at 50% 0%, rgba(255, 255, 255, 0.5), transparent 70%);
+  background: radial-gradient(80px 12px at 50% 0%, rgba(255, 255, 255, 0.4), transparent 70%);
 }
 
 .nav-track--x .drop {
