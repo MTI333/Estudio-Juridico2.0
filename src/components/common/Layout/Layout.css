@@ -7,8 +7,6 @@
 
 .main-content {
   flex: 1;
-  padding-top: 80px; /* Compensa la navbar fixed */
-  min-height: calc(100vh - 80px); /* Asegura que el contenido ocupe el espacio restante */
 }
 
 /* Asegúrate de que el footer se quede abajo */

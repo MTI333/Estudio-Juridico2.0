@@ -1,0 +1,36 @@
+/* src/components/common/WhatsAppFloat/WhatsAppFloat.css */
+.whatsapp-flotante {
+  position: fixed;
+  right: calc(22px + env(safe-area-inset-right));
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  z-index: 900;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp-flotante img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-flotante {
+    transition: none;
+  }
+
+  .whatsapp-flotante:hover {
+    transform: none;
+  }
+}

@@ -1,18 +1,17 @@
-/* src/styles/components/Footer.css */
-.footer {
-    background: var(--color-oliva);
-    color: var(--color-blanco);
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto;
+/* src/components/common/Footer/Footer.css */
+.site-footer {
+  padding: 26px 0 30px;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+.footer-panel {
+  padding: 16px;
+  text-align: center;
+  font-size: 0.8125rem;
 }
 
-.footer p {
-    opacity: 0.9;
-    font-size: 0.9rem;
+/* Deja el texto del pie por encima del WhatsApp flotante al llegar al final de la página. */
+@media (max-width: 768px) {
+  .site-footer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
 }
