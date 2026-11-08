@@ -2,6 +2,8 @@
 import React from 'react';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
+import GlassPanel from '../glass/GlassPanel';
+import { scrollToSection } from '../utils/scrollToSection';
 import './Home.css';
 
 // --- Importaciones de la galería ---
@@ -34,37 +36,32 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero-section" id="hero">
-        <div className="hero-container">
-          <div className="hero-content-centered">
+        <div className="container">
+          <GlassPanel radius={26} className="hero-panel">
             <h1 className="hero-title">
-              Excelencia Legal con Compromiso y Resultados
+              Excelencia Legal con <span className="text-dorado">Compromiso</span> y Resultados
             </h1>
+            <div className="hero-rule" aria-hidden="true" />
             <p className="hero-subtitle">
                 Ofrecemos atención personalizada en todos los procesos iniciados 
               dando respuesta a cada cliente cada vez que solicita información 
                                             sobre su trámite. 
             </p>
-            <div className="hero-buttons">
-              <button 
-                className="btn btn-secondary"
-                onClick={() => {
-                  const serviciosSection = document.getElementById('servicios');
-                  if (serviciosSection) {
-                    serviciosSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                Conocer Nuestros Servicios
-              </button>
-            </div>
-          </div>
+            <button
+              type="button"
+              className="btn btn-gold"
+              onClick={() => scrollToSection('servicios')}
+            >
+              Conocer Nuestros Servicios
+            </button>
+          </GlassPanel>
         </div>
       </section>
-      
-      <section id="informacion-profesional"><InformacionProfesional /></section>
-      
-      <section id="servicios"><Servicios /></section>
-      
+
+      <InformacionProfesional />
+
+      <Servicios />
+
       <section className="features-section">
         <div className="container">
           <div className="section-header">
@@ -75,7 +72,7 @@ const Home = () => {
             </p>
           </div>
           <div className="features-grid">
-            <div className="feature-card">
+            <GlassPanel className="feature-card">
               <div className="feature-icon">
                 <img src={iconoExperiencia} alt="Icono de Experiencia Comprobada" />
               </div>
@@ -83,8 +80,8 @@ const Home = () => {
               <p className="feature-description">
                 Actualmente con 28 años de experiencia.
               </p>
-            </div>
-            <div className="feature-card">
+            </GlassPanel>
+            <GlassPanel className="feature-card">
               <div className="feature-icon">
                 <img src={iconoResultados} alt="Icono de Resultados Efectivos" />
               </div>
@@ -93,7 +90,7 @@ const Home = () => {
                 Enfoque en obtener los mejores resultados posibles mediante 
                 estrategias legales innovadoras y efectivas.
               </p>
-            </div>
+            </GlassPanel>
           </div>
         </div>
       </section>

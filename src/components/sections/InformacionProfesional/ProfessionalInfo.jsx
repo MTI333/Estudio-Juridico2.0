@@ -1,17 +1,18 @@
 // src/components/sections/InformacionProfesional.jsx
 import React from 'react';
+import GlassPanel from '../../glass/GlassPanel';
 import './ProfessionalInfo.css';
 
 const InformacionProfesional = () => {
   return (
     <section className="informacion-profesional" id="informacion-profesional">
       <div className="container">
-        <div className="section-header compact">
+        <div className="section-header">
           <h2 className="section-title">Información Profesional</h2>
         </div>
         
         {/* Información Principal Compacta */}
-        <div className="info-principal">
+        <GlassPanel radius={22} className="info-principal">
           <div className="titulo-principal">
             <h1>Ab. Sandra Marcela Policastro</h1>
             <div className="institucion">
@@ -28,7 +29,7 @@ const InformacionProfesional = () => {
               <strong>CSJN:</strong> Tomo 66 - Folio 634
             </div>
           </div>
-        </div>
+        </GlassPanel>
 
        
 

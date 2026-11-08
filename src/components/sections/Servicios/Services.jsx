@@ -1,5 +1,6 @@
 // src/components/sections/Servicios.jsx
 import React from 'react';
+import GlassPanel from '../../glass/GlassPanel';
 import './Services.css';
 
 // 1. IMPORTAMOS LAS IMÁGENES DE LOS ICONOS
@@ -65,7 +66,7 @@ const Servicios = () => {
   return (
     <section className="servicios" id="servicios">
       <div className="container">
-        <div className="section-header compact">
+        <div className="section-header">
           <h3 className="section-title"> Areas De Especializacion </h3>
           <p className="section-subtitle">
             Ofrecemos una amplia gama de servicios legales, en toda la provincia de Córdoba, con atención presencial o virtual.
@@ -74,7 +75,7 @@ const Servicios = () => {
         
         <div className="servicios-grid">
           {servicios.map(servicio => (
-            <div key={servicio.id} className="servicio-card">
+            <GlassPanel key={servicio.id} className="servicio-card">
               <div className="servicio-header">
                 <div className="servicio-icon">
                   {/* 3. CAMBIAMOS EL DIV POR UNA ETIQUETA IMG */}
@@ -93,7 +94,7 @@ const Servicios = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GlassPanel>
           ))}
         </div>
       </div>
