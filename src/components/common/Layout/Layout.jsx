@@ -7,6 +7,10 @@ import './Layout.css'; // Importa el CSS
 const Layout = ({ children }) => {
   return (
     <div className="layout">
+      <div className="aurora" aria-hidden="true">
+        <span className="aurora-blob aurora-blob--olive" />
+        <span className="aurora-blob aurora-blob--gold" />
+      </div>
       <Navbar />
       <main className="main-content">
         {children}

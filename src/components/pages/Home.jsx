@@ -1,6 +1,5 @@
 // src/components/pages/Home.jsx
 import React from 'react';
-import Hero from '../sections/Home/Hero';
 import Servicios from '../sections/Servicios/Services';
 import InformacionProfesional from '../sections/InformacionProfesional/ProfessionalInfo';
 import './Home.css';
