@@ -17,7 +17,7 @@
 
 .nav-pill {
   height: var(--nav-h);
-  /* A la izquierda, lo necesario para que las esquinas del logo entren en la curva de la píldora. */
+  /* Más aire a la izquierda: el logo tiene esquinas y la píldora termina en curva. */
   padding: 0 9px 0 22px;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
 
 .logo-image {
   display: block;
-  height: 75px;
+  height: 58px;
   width: auto;
   border-radius: 10px;
 }
@@ -187,7 +187,7 @@
   }
 
   .logo-image {
-    height: 65px;
+    height: 52px;
   }
 }
 
@@ -203,12 +203,12 @@
   }
 
   .logo-image {
-    height: 60px;
+    height: 48px;
   }
 }
 
 @media (max-width: 480px) {
   .logo-image {
-    height: 55px;
+    height: 44px;
   }
 }
